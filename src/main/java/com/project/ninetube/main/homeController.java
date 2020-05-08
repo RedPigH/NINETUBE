@@ -24,10 +24,5 @@ public class homeController {
         return mv;
     }
 
-    @RequestMapping("/main2/contents")
-    public ModelAndView contentspage() {
-        ModelAndView mv = new ModelAndView("ncontents/contents");
-        return mv;
-    }
 }
 
