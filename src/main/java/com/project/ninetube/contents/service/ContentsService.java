@@ -14,17 +14,16 @@ import java.util.Optional;
 @Service
 public class ContentsService {
     @Autowired //자동 주입
-    private ContentsRepository contentsRepository;
+    ContentsRepository contentsRepository;
 
     public List<Contents> findAll() {
-        List<Contents> members = new ArrayList<>();
-        contentsRepository.findAll().forEach(e -> members.add(e));
-        return members;
+        List<Contents> list = contentsRepository.findAll();
+        return list;
     }
 
-    public List<Contents> findByVFILENME(String filename){
-        List<Contents> fileinfo = contentsRepository.findByVFILENAME(filename);
-        return fileinfo;
+    public List<Contents> findByOID(String file_oid){
+        List<Contents> list = contentsRepository.findByOID(file_oid);
+        return list;
     }
 
 

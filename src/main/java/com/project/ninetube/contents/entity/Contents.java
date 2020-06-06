@@ -17,12 +17,12 @@ public class Contents {
 
     public Contents(){}
 
-    public Contents(String OID, String VFILENAME, int NVIDEO_SIZE, String CREATOR, Date CREATDAT, int VIECNT, int GOODCNT, int BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
+    public Contents(String OID, String VFILENAME, int NVIDEO_SIZE, String CREATOR, Date CREATEDAT, int VIECNT, int GOODCNT, int BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
         this.OID = OID;
         this.VFILENAME = VFILENAME;
         this.NVIDEO_SIZE = NVIDEO_SIZE;
         this.CREATOR = CREATOR;
-        this.CREATDAT = CREATDAT;
+        this.CREATEDAT = CREATEDAT;
         this.VIECNT = VIECNT;
         this.GOODCNT = GOODCNT;
         this.BADCNT = BADCNT;
@@ -44,7 +44,7 @@ public class Contents {
     @Column
     private String CREATOR;
     @Column
-    private Date CREATDAT;
+    private Date CREATEDAT;
     @Column
     private int VIECNT;
     @Column
@@ -99,12 +99,12 @@ public class Contents {
         this.CREATOR = CREATOR;
     }
 
-    public Date getCREATDAT() {
-        return CREATDAT;
+    public Date getCREATEDAT() {
+        return CREATEDAT;
     }
 
-    public void setCREATDAT(Date CREATDAT) {
-        this.CREATDAT = CREATDAT;
+    public void setCREATEDAT(Date CREATDAT) {
+        this.CREATEDAT = CREATDAT;
     }
 
     public int getVIECNT() {

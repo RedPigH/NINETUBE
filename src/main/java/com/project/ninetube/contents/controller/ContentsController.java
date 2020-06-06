@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,9 +23,20 @@ public class ContentsController {
     @Autowired
     private ContentsService contentsService;
 
-    @RequestMapping("/main2/contents")
+    @RequestMapping("/contents")
     public ModelAndView contentspage() {
+        List<Contents> list = contentsService.findAll();//서비스에서 요청에 해당하는 처리
+        ModelAndView mv = new ModelAndView("mainpage_2");//응답페이지에 위치 지정
+        mv.addObject("boardlist",list);//서비스에서 받아온 데이터 모델엔뷰객체 삽입
+        return mv;
+    }
+
+    @RequestMapping("/contents/{OID}")
+    public ModelAndView contentspageOne(@PathVariable("OID") String OID) {
+        List<Contents> contentsList = contentsService.findByOID(OID);
+        Contents con = contentsList.get(0);
         ModelAndView mv = new ModelAndView("ncontents/contents");
+        mv.addObject("content",con);
         return mv;
     }
 
@@ -42,6 +54,7 @@ public class ContentsController {
         List<Contents> member = contentsService.findAll();
         return new ResponseEntity<List<Contents>>(member, HttpStatus.OK);
     }
+
 
 
 
