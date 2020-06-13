@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.fake{
+    width: 100%;
+    height: 70px;
+    float: left;
+    background-color: white;
+}
+header .logo{
+    width: 16%;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+}
+.logo .logo1{
+    float: left;
+    width : 20%;
+    height: 100%;
+}
+.logo .open_menu{
+    margin: 25px;
+    cursor: pointer;
+}
+.logo .logo2{
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.logo2 .img_logo{
+    margin: 10px 15px;
+    cursor: pointer;
+}
+header .search{
+    width: 66%;
+    height: 70px;
+    float: left;
+    background-color: white;
+}
+
+.search .input1{
+    width: 600px;
+    height: 29px;
+    margin: 2.1% 0px 2% 14%;
+    text-indent: 2px;
+    float: left;
+    border: 1px solid #D8D8D8;
+    border-right: none;
+}
+.search .input2{
+    width: 50px;
+    height: 31px;
+    margin-top: 20px;
+    border: 1px solid #D8D8D8;
+    float: left;
+    cursor: pointer;
+    opacity: 0.4;
+}
+.input2:hover{
+    opacity: 1;
+}
+header .icon{
+    width: 18%;
+    height: 70px;
+    float: left;
+    background-color: white;
+}
+.icon img{
+    margin: 10% 14% 0 0;
+    cursor: pointer;
+}
+.aside{
+    width: 17%;
+    height: 700px;
+    background-color: #ffffff;
+    float: left;
+    position: fixed;
+    overflow-y: auto;
+    top: 70px;
+    left: 0px;
+}
+.aside ul li{
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    padding: 8px 10px;
+    text-indent: 18px;
+}
+.aside ul li img{
+    padding-right: 30px;
+}
+.aside ul li:hover{
+    background-color: #e9e9e9;
+}
+.aside ul li a{
+    width: 100%;
+    line-height: 30px;
+}
+.aside2{
+    width: 4%;
+    height: 700px;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    display: none;
+}
+.aside2 p{
+    font-size: 12px;
+    line-height: 0px;
+}
+.aside2 li{
+    display: block;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    margin-left: 2px;
+    cursor: pointer;
+    line-height: 50px;
+}
+.aside2 li:hover{
+    background-color: #D8D8D8;
+}
+hr{
+    background-color: #e9e9e9;
+}
+section{
+    width: 83%;
+    float: right;
+    background-color:#f6f6f6;
+    font-family: 'Nanum Gothic', sans-serif;
+    z-index: -100;
+}
+.wrap{
+    width: 96%;
+}
+.hidden{
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 40px;
+    border-radius: 5px;
+    position: fixed;
+    display:none;
+    top: 55px;
+}
+.hide1{
+    right: 32.1%
+}
+.hide2{
+    right : 243px;
+}
+.hide3{
+    right : 150px;
+    width: 80px;
+}
+.hide4{
+    right : 105px;
+}
+.personal{
+    width: 300px;
+    height: 350px;
+    position: fixed;
+    top: 30px;
+    right: 75px;
+    border: 1px #909090 solid;
+    background-color: #ffffff;
+    display: none;
+}
+.personal_photo{
+    width: 20%;
+    height: 100px;
+    float: left;
+    line-height: 70px;
+    text-align: center;
+}
+.personal_info{
+    width: 80%;
+    height: 100px;
+    float: left;
+    font-size: 14px;
+    line-height: 20px;
+}
+.person_name{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 6px;
+}
+.personal ul li a{
+    width:87%;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 40px;
+    padding: 10px 20px;
+}
+.personal ul li a img{
+    margin-right: 20px;
+}
+.personal ul li:nth-of-type(1){
+    margin-top: 10px;
+}
+.personal ul li a:hover{
+    background-color: #D8D8D8;
+}
+.blue_name{
+    color: blue;
+}
+section h2{
+    margin: 30px 30px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+section .video{
+    width: 22%;
+    height: 280px;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+.video .youtube{
+    width: 100%;
+    height: 60%;
+}
+.video .info{
+    width: 100%;
+    height: 40%;
+    background-color: white;
+    cursor: pointer;
+}
+.info .info_img{
+    width: 15%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 5px;
+}
+.info .info2{
+    width: 75%;
+    height: 40%;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info .info3{
+    width: 75%;
+    height: 60%;
+    float: left;
+    text-indent: 10px;
+}
+.info .more{
+    width: 10%;
+    height: 100%;
+    float: right;
+}
+.info2 p{
+   padding-left: 10px;
+}
+.title, .time{
+    font-size: 14px;
+    padding-top: 5px;
+}
+.maker{
+    font-size : 13px;
+}
+.visible{
+    display: block;
+}
+.none{
+    display: none;
+}
+h4{
+    margin:10px 25px;
+}
+.footer_link{
+    margin-top: 30px;
+    font-size: 0.8em;
+    font-family: Roboto, Arial, sans-serif;
+}
+.footer_link a {
+    margin-left: 13px;
+}
+.footer{
+    padding: 20px 13px;
+    font-size: 0.8em;
+    color: #909090;
+    font-family: Roboto, Arial, sans-serif;
+}
+iframe{
+    border: 0;
+}
+
+
+
+.box_page{
+    width: 80%;
+    height: 2400px;
+    float: left;
+    background-color: #f6f6f6;
+}
+.record{
+    width: 100%;
+    height: 600px;
+    margin-left: 50px;
+}
+.record_title{
+    width: 100%;
+    height: 5%;
+    margin: 6px;
+    padding: 10px;
+    font-size: 19px;
+    position: relative;
+}
+.record_title img{
+    margin-right: 20px;
+}
+.all{
+   position: absolute;
+   top: 10px;
+   right: 80px;
+}
+.all a{
+    font-size: 14px;
+    color: blue;
+}
+.box_video{
+    width: 23%;
+    height: 190px;
+    margin: 20px 5px 20px 3px;
+    float: left;
+}
+.box_video .youtube{
+    width: 100%;
+    height: 70%;
+}
+#user_info{
+    width: 20%;
+    height: 400px;
+    float: left;
+}
+#user_info .user{
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top : 60px;
+    text-align: center;
+}
+.user p {
+    margin-top: 30px;
+}
+.user ul{
+    margin-top: 30px;
+}
+.user li{
+    width: 80%;
+    border-top: 1px solid #D8D8D8;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.user li:nth-child(3){
+    border-bottom: 1px solid #D8D8D8;
+}
+.box_info1{
+    width: 100%;
+    height: 23%;
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+.box_info1 .title{
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+.box_info2{
+    margin-bottom: 10px;
+}
+.box_info2{
+    padding-top: 4px;
+}
+.later, .play_list, .like{
+    width: 100%;
+    height: 600px;
+    float: left;
+    margin-left: 50px;
+    border-top: 1px solid #D8D8D8;
+}
