@@ -35,7 +35,7 @@
 <!--메인사이드메뉴-->
 <aside class="aside">
     <ul>
-        <li><a href="#"><img src="resources/home/img/home.png" alt="bell">홈</a></li>
+        <li class ="main"><a href="#"><img src="resources/home/img/home.png" alt="bell">홈</a></li>
         <li><a href="#"><img src="resources/home/img/fire.png" alt="fire">인기</a></li>
         <li><a href="#"><img src="resources/home/img/feed.png" alt="feed">구독</a></li>
     </ul>
@@ -112,6 +112,7 @@
         </ul>
     </div>
     <!--동영상 있는 페이지-->
+    <div id="wrap" class="visible">
     <h2>맞춤동영상</h2>
     <c:forEach var="video" items="${videoList}">
         <%--<fmt:formatDate var="CREATEDAT" value="${video.CREATEDAT}" pattern="yyyy.MM-dd"/>--%>
@@ -131,10 +132,11 @@
             </div>
         </article>
     </c:forEach>
+    </div>
     <!-- 보관함 눌렀을 때 나타나는 페이지 -->
     <div class="box_page none" id="boxPage">
         <div class="record">
-            <div class="record_title"><p><img src="images/countdown.png" alt="record"> 기록</p>
+            <div class="record_title"><p><img src="resources/home/img/countdown.png" alt="record"> 기록</p>
                 <div class="all"><a href="#">모두 보기</a></div>
             </div>
             <div class="box_video">
@@ -149,7 +151,7 @@
             </div>
         </div>
         <div class="later">
-            <div class="record_title"><p><img src="images/clock.png" alt="later"> 나중에 볼 동영상</p>
+            <div class="record_title"><p><img src="resources/home/img/clock.png" alt="later"> 나중에 볼 동영상</p>
                 <div class="all"><a href="#">모두 보기</a></div>
             </div>
             <div class="box_video">
@@ -164,7 +166,7 @@
             </div>
         </div>
         <div class="play_list">
-            <div class="record_title"><p><img src="images/open-menu.png" alt="list"> 재생목록</p>
+            <div class="record_title"><p><img src="resources/home/img/open-menu.png" alt="list"> 재생목록</p>
                 <div class="all"><a href="#">모두 보기</a></div>
             </div>
             <div class="box_video">
@@ -179,7 +181,7 @@
             </div>
         </div>
         <div class="like">
-            <div class="record_title"><p><img src="images/like.png" alt="like"> 좋아요 표시한 동영상</p>
+            <div class="record_title"><p><img src="resources/home/img/like.png" alt="like"> 좋아요 표시한 동영상</p>
                 <div class="all"><a href="#">모두 보기</a></div>
             </div>
             <div class="box_video">
@@ -196,7 +198,7 @@
     </div>
     <div id="user_info" class="none">
         <div class="user">
-            <img src="images/users.png" alt="user">
+            <img src="resources/home/img/users.png" alt="user">
             <p>Hong Gil Dong</p>
             <ul>
                 <li>구독</li>
