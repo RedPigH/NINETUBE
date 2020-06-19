@@ -1,10 +1,11 @@
 package com.project.ninetube.contents.entity;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.Builder;
 import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.util.Date;
-
 
 @Entity
 @DynamicInsert
@@ -16,14 +17,14 @@ public class Contents {
     private String OID;
 
     public Contents(){}
-
-    public Contents(String OID, String VFILENAME, int NVIDEO_SIZE, String CREATOR, Date CREATEDAT, int VIECNT, int GOODCNT, int BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
+    @Builder
+    public Contents(String OID, String VFILENAME, int NVIDEO_SIZE, String CREATOR, Date CREATEDATE, int VIEWCNT, int GOODCNT, int BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
         this.OID = OID;
         this.VFILENAME = VFILENAME;
         this.NVIDEO_SIZE = NVIDEO_SIZE;
         this.CREATOR = CREATOR;
-        this.CREATEDAT = CREATEDAT;
-        this.VIECNT = VIECNT;
+        this.CREATEDATE = CREATEDATE;
+        this.VIEWCNT = VIEWCNT;
         this.GOODCNT = GOODCNT;
         this.BADCNT = BADCNT;
         this.RUNNINGTIME = RUNNINGTIME;
@@ -35,36 +36,34 @@ public class Contents {
         this.NVIDEO_TAG = NVIDEO_TAG;
     }
 
-
-
     @Column
-    private String VFILENAME;
+    private String VFILENAME;//
     @Column
-    private int NVIDEO_SIZE;
+    private int NVIDEO_SIZE;//
     @Column
-    private String CREATOR;
+    private String CREATOR;//
     @Column
-    private Date CREATEDAT;
+    private Date CREATEDATE;//
     @Column
-    private int VIECNT;
+    private int VIEWCNT;//
     @Column
-    private int GOODCNT;
+    private int GOODCNT;//
     @Column
-    private int BADCNT;
+    private int BADCNT;//
     @Column
-    private String RUNNINGTIME;
+    private String RUNNINGTIME;//
     @Column
-    private String NVIDEO_DESCRIPTION;
+    private String NVIDEO_DESCRIPTION;//
     @Column
-    private int DELSTATUS;
+    private int DELSTATUS;//
     @Column
-    private Date DELDATE;
+    private Date DELDATE;//
     @Column
-    private Date UPDATEDATE;
+    private Date UPDATEDATE;//
     @Column
-    private String CATEGORYOID;
+    private String CATEGORYOID;//
     @Column
-    private String NVIDEO_TAG;
+    private String NVIDEO_TAG;//
 
 
     public String getOID() {
@@ -99,20 +98,20 @@ public class Contents {
         this.CREATOR = CREATOR;
     }
 
-    public Date getCREATEDAT() {
-        return CREATEDAT;
+    public Date getCREATEDATE() {
+        return CREATEDATE;
     }
 
-    public void setCREATEDAT(Date CREATDAT) {
-        this.CREATEDAT = CREATDAT;
+    public void setCREATEDATE(Date CREATEDATE) {
+        this.CREATEDATE = CREATEDATE;
     }
 
-    public int getVIECNT() {
-        return VIECNT;
+    public int getVIEWCNT() {
+        return VIEWCNT;
     }
 
-    public void setVIECNT(int VIECNT) {
-        this.VIECNT = VIECNT;
+    public void setVIEWCNT(int VIECNT) {
+        this.VIEWCNT = VIECNT;
     }
 
     public int getGOODCNT() {

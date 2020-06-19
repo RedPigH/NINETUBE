@@ -6,19 +6,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.ninetube.contents.entity.Contents;
+import com.project.ninetube.contents.entity.ContentsUploadDto;
 import com.project.ninetube.contents.repository.ContentsRepository;
 
 import java.util.List;
 
 
-@RestController
+@RestController//구글처바라
 public class ContentsController {
     @Autowired
     private ContentsService contentsService;
@@ -40,6 +38,27 @@ public class ContentsController {
         return mv;
     }
 
+    @RequestMapping("/contentsupload")
+    public ModelAndView contentsupload() {
+        ModelAndView mv = new ModelAndView("ncontents/contentsupload");
+        return mv;
+    }
+/*
+    @RequestMapping("/save")
+    public ModelAndView insertupload() {
+        List<Contents> contentsList = contentsService.save();
+        return mv;
+    }
+*/
+    @PostMapping(value = "/save")
+    public ModelAndView update(@ModelAttribute ContentsUploadDto uploadDto){
+        System.out.println("###############111####################");
+        contentsService.save(uploadDto);
+        System.out.println("##############22#####################");
+        ModelAndView mv = new ModelAndView("ncontents/contents");
+        return mv;
+
+    }
 
 /*    @RequestMapping("/add")
     public Contents add(Contents con) {
