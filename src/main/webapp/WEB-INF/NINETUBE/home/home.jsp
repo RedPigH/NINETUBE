@@ -4,12 +4,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>NINETUBE</title>
-    <link rel="stylesheet" href="resources/home/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<title>NINETUBE</title>
+<link rel="stylesheet" href="resources/home/css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<%
+    String contextPath = request.getContextPath();
+%>
+    <script>
+        $(function() {
+            $("#searchInput").autocomplete({
+                source : function( request, response ) {
+                    const vFileName = $("#searchInput").val();
+                    $.ajax({
+                        type: 'post',
+                        url: "/autoSearch",
+                        dataType: "json",
+                        data: { vFileName : vFileName},
+                        success: function(data) {
+                            //서버에서 json 데이터 response 후 목록에 추가
+                            response(
+                                $.map(data, function(item) {    //json[i] 번째 에 있는게 item 임.
+                                    return {
+                                        /*label: item+"label",    //UI 에서 보여지는 글자, 실제 검색어랑 비교 대상*/
+                                        label: item,
+                                        value: item,                // 사용자 설정값?
+                                        test : item
+                                        /*test : item+"test"    //이런식으로 사용*/
+
+                                        //[
+                                        //    {"name": "하늘이", "dogType": "푸들", "age": 1, "weight": 2.14},
+                                        //    {"name": "콩이", "dogType": "푸들", "age": 3, "weight": 2.5},
+                                        //    {"name": "람이", "dogType": "허스키", "age": 7, "weight": 3.1}
+                                        //]
+                                        // json이 다음 처럼 넘어오면
+                                        // 상황 : name으로 찾고 dogType을 넘겨야 하는 상황이면
+                                        // label : item.dogType ,    //오토컴플릿이 되고 싶은 단어
+                                        // value : item.family ,    //넘겨야 하는 단어
+                                        // age : item.age ,
+                                        // weight : item.weight
+                                    }
+                                })
+                            );
+                        }
+                    });
+                },    // source 는 자동 완성 대상
+                select : function(event, ui) {    //아이템 선택시
+                    console.log(ui);//사용자가 오토컴플릿이 만들어준 목록에서 선택을 하면 반환되는 객체
+                    console.log(ui.item.label);    //김치 볶음밥label
+                    console.log(ui.item.value);    //김치 볶음밥
+                    console.log(ui.item.test);    //김치 볶음밥test
+
+                },
+                focus : function(event, ui) {    //포커스 가면
+                    return false;//한글 에러 잡기용도로 사용됨
+                },
+                minLength: 1,// 최소 글자수
+                autoFocus: true, //첫번째 항목 자동 포커스 기본값 false
+                classes: {    //잘 모르겠음
+                    "ui-autocomplete": "highlight"
+                },
+                delay: 500,    //검색창에 글자 써지고 나서 autocomplete 창 뜰 때 까지 딜레이 시간(ms)
+//            disabled: true, //자동완성 기능 끄기
+                position: { my : "right top", at: "right bottom" },    //잘 모르겠음
+                close : function(event){    //자동완성창 닫아질때 호출
+                    console.log(event);
+                }
+            });
+
+        });
+    </script>
+
 </head>
+
+
+
 <body>
 <header>
     <div class="logo">
@@ -21,8 +97,15 @@
         </div>
     </div>
     <div class="search">
-        <input type="text" name="search" placeholder="검색" class="input1">
-        <button class="input2"><img src="resources/home/img/search.png" alt="search"></button>
+        <input type="text" id="searchInput" name="keywordSearch" placeholder="검색" class="input1">>
+        <a href="javascript:mainSearch();" class="input2">
+            <img src="resources/home/img/search.png" alt="search">
+        </a>
+        <%--<input type="text" id ="searchInput" name="searchInput" placeholder="검색" class="input1">
+        <a href="javascript:mainSearch();" class="input2">
+            <img src="resources/home/img/search.png" alt="search">검색
+        </a>--%>
+        <<%--button class="input2"><img src="resources/home/img/search.png" alt="search"></button>--%>
     </div>
     <div class="icon">
         <img src="resources/home/img/upload.png" alt="uplodad" class="upload">
