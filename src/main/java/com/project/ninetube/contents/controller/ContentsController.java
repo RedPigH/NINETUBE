@@ -31,8 +31,7 @@ public class ContentsController {
 
     @RequestMapping("/contents/{OID}")
     public ModelAndView contentspageOne(@PathVariable("OID") String OID) {
-        List<Contents> contentsList = contentsService.findByOID(OID);
-        Contents con = contentsList.get(0);
+        Contents con = contentsService.findByOID(OID);
         ModelAndView mv = new ModelAndView("ncontents/contents");
         mv.addObject("content",con);
         return mv;
@@ -50,11 +49,17 @@ public class ContentsController {
         return mv;
     }
 */
-    @PostMapping(value = "/save")
-    public ModelAndView update(@ModelAttribute ContentsUploadDto uploadDto){
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView update(String VFILENAME, String CREATOR, String CATEGORYOID, String NVIDEO_DESCRIPTION){
         System.out.println("###############111####################");
-        contentsService.save(uploadDto);
-        System.out.println("##############22#####################");
+        Contents uploadcon = new Contents();
+        uploadcon.setOID("123459");
+        uploadcon.setVFILENAME(VFILENAME);
+        uploadcon.setCREATOR(CREATOR);
+        uploadcon.setCATEGORYOID(CATEGORYOID);
+        uploadcon.setNVIDEO_DESCRIPTION(NVIDEO_DESCRIPTION);
+        System.out.println(CREATOR);
+        contentsService.save(uploadcon);
         ModelAndView mv = new ModelAndView("ncontents/contents");
         return mv;
 

@@ -5,12 +5,27 @@ import com.project.ninetube.contents.entity.ContentsUploadDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public interface ContentsRepository extends JpaRepository<Contents, Long> {
+public class ContentsRepository {
 
-    public List<Contents> findByOID(String OID);
+    @PersistenceContext
+    EntityManager em;
+
+    public List<Contents> findAll(){
+        return em.createQuery("select m from Contents m", Contents.class)
+                .getResultList();
+    }
+
+    public Contents findByOID(String OID) {
+        return em.find(Contents.class, OID);
+    }
+    public void save(Contents uploadDto) {
+        em.persist(uploadDto);
+    }
 }
 
 

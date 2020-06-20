@@ -122,7 +122,7 @@
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="custom-contents">
                         <div class="custom-contents-contents">
-                            <form action="/save" method="post">
+                            <form role="form" action="/save" method="post">
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">영상제목</label>
                                     <div class="col-sm-12 col-md-7">

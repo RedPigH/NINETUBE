@@ -12,13 +12,12 @@ import java.util.Date;
 @Table(name = "NVIDEO_V")
 public class Contents {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private String OID;
 
     public Contents(){}
     @Builder
-    public Contents(String OID, String VFILENAME, int NVIDEO_SIZE, String CREATOR, Date CREATEDATE, int VIEWCNT, int GOODCNT, int BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
+    public Contents(String OID, String VFILENAME, Integer NVIDEO_SIZE, String CREATOR, Date CREATEDATE, Integer VIEWCNT, Integer GOODCNT, Integer BADCNT, String RUNNINGTIME, String NVIDEO_DESCRIPTION, Integer DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String NVIDEO_TAG) {
         this.OID = OID;
         this.VFILENAME = VFILENAME;
         this.NVIDEO_SIZE = NVIDEO_SIZE;
@@ -39,23 +38,23 @@ public class Contents {
     @Column
     private String VFILENAME;//
     @Column
-    private int NVIDEO_SIZE;//
+    private Integer NVIDEO_SIZE;//
     @Column
     private String CREATOR;//
     @Column
     private Date CREATEDATE;//
     @Column
-    private int VIEWCNT;//
+    private Integer VIEWCNT;//
     @Column
-    private int GOODCNT;//
+    private Integer GOODCNT;//
     @Column
-    private int BADCNT;//
+    private Integer BADCNT;//
     @Column
     private String RUNNINGTIME;//
     @Column
     private String NVIDEO_DESCRIPTION;//
     @Column
-    private int DELSTATUS;//
+    private Integer DELSTATUS;//
     @Column
     private Date DELDATE;//
     @Column
@@ -82,11 +81,11 @@ public class Contents {
         this.VFILENAME = VFILENAME;
     }
 
-    public int getNVIDEO_SIZE() {
+    public Integer getNVIDEO_SIZE() {
         return NVIDEO_SIZE;
     }
 
-    public void setNVIDEO_SIZE(int NVIDEO_SIZE) {
+    public void setNVIDEO_SIZE(Integer NVIDEO_SIZE) {
         this.NVIDEO_SIZE = NVIDEO_SIZE;
     }
 
@@ -106,27 +105,27 @@ public class Contents {
         this.CREATEDATE = CREATEDATE;
     }
 
-    public int getVIEWCNT() {
+    public Integer getVIEWCNT() {
         return VIEWCNT;
     }
 
-    public void setVIEWCNT(int VIECNT) {
+    public void setVIEWCNT(Integer VIECNT) {
         this.VIEWCNT = VIECNT;
     }
 
-    public int getGOODCNT() {
+    public Integer getGOODCNT() {
         return GOODCNT;
     }
 
-    public void setGOODCNT(int GOODCNT) {
+    public void setGOODCNT(Integer GOODCNT) {
         this.GOODCNT = GOODCNT;
     }
 
-    public int getBADCNT() {
+    public Integer getBADCNT() {
         return BADCNT;
     }
 
-    public void setBADCNT(int BADCNT) {
+    public void setBADCNT(Integer BADCNT) {
         this.BADCNT = BADCNT;
     }
 
@@ -146,11 +145,11 @@ public class Contents {
         this.NVIDEO_DESCRIPTION = NVIDEO_DESCRIPTION;
     }
 
-    public int getDELSTATUS() {
+    public Integer getDELSTATUS() {
         return DELSTATUS;
     }
 
-    public void setDELSTATUS(int DELSTATUS) {
+    public void setDELSTATUS(Integer DELSTATUS) {
         this.DELSTATUS = DELSTATUS;
     }
 

@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,25 +17,24 @@ import java.util.Optional;
 
 
 @Service
+@Transactional
 public class ContentsService {
+
     @Autowired //자동 주입
     ContentsRepository contentsRepository;
-
-    @PersistenceContext
-    EntityManager em;
 
     public List<Contents> findAll() {
         List<Contents> list = contentsRepository.findAll();
         return list;
     }
 
-    public List<Contents> findByOID(String file_oid){
-        List<Contents> list = contentsRepository.findByOID(file_oid);
-        return list;
+    public Contents findByOID(String file_oid){
+        Contents con = contentsRepository.findByOID(file_oid);
+        return con;
     }
 
-    public void save(ContentsUploadDto uploadDto) {
-        em.persist(uploadDto);
+    public void save(Contents uploadDto) {
+        contentsRepository.save(uploadDto);
     }
 /*
     public ContentsUploadDto save(ContentsUploadDto file){
