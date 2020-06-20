@@ -79,10 +79,11 @@
 <!--작은메뉴(클릭시)-->
 <aside class="aside2">
     <ul>
-        <li><img src="resources/home/img/home.png" alt="home"><p>홈</p></li>
+        <li class ="main"><a href="#"><img src="resources/home/img/home.png" alt="bell">홈</a></li>
+        <%--<li class ="main"><a href="#"><img src="resources/home/img/home.png" alt="home"><p>홈</p></a></li>--%>
         <li><img src="resources/home/img/fire.png" alt="fire"><p>인기</p></li>
         <li><img src="resources/home/img/feed.png" alt="feed"><p>구독</p></li>
-        <li><img src="resources/home/img/movie.png" alt="movie"><p>보관함</p></li>
+        <li class ="box"><a href="#"><img src="resources/home/img/movie.png" alt="movie"><p>보관함</p></a></li>
     </ul>
 </aside>
 <!--마우스 오버시 생기는 메뉴-->
@@ -106,7 +107,7 @@
         <hr/>
         <ul>
             <li><a href="#"><img src="resources/home/img/user.png" alt="user">내 채널</a></li>
-            <li><a href="#"><img src="resources/home/img/price.png" alt="price">My Page</a></li>
+            <li class ="box"><a href="#"><img src="resources/home/img/price.png" alt="price">My Page</a></li>
             <li><a href="#"><img src="resources/home/img/logout.png" alt="logout">로그아웃</a></li>
             <li><a href="#"><img src="resources/home/img/settings.png" alt="settings">설정</a></li>
         </ul>
@@ -199,7 +200,7 @@
     <div id="user_info" class="none">
         <div class="user">
             <img src="resources/home/img/users.png" alt="user">
-            <p>Hong Gil Dong</p>
+            <p>${user.NAME}</p>
             <ul>
                 <li>구독</li>
                 <li>업로드</li>

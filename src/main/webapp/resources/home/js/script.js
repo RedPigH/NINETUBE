@@ -82,16 +82,3 @@ main.addEventListener('click', function () {
     userInfo.classList.replace('visible','none');
 })
 
-/*
-var main = doc.querySelector('.main');
-var wrap = doc.getElementById('wrap');
-var boxPage = doc.getElementById('boxPage')
-var userInfo = doc.getElementById('user_info')
-
-main.addEventListener('click', function () {
-    wrap.classList.replace('none','visible');
-    boxPage.classList.replace('visible','none');
-    userInfo.classList.replace('visible','none');
-})
-*/
-
