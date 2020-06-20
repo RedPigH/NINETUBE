@@ -1,0 +1,18 @@
+.nsignup_signup_submit {
+     background-color: #1eb6b7 !important;
+     float: right !important;
+ }
+
+ .nsignup> a{
+     display: inline-block;
+ }
+
+ .nsignup {
+    padding-left: 3em;
+         padding-right: 3em;
+ }
+
+ .subncan> a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+ }

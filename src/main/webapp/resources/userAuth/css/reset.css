@@ -1,0 +1,119 @@
+/*
+Copyright (c) 2017, Igini. All rights reserved.
+version: 1.0.0
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:200,300,400,700');
+
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/NanumGothic-Regular.eot'); /* IE9 Compat Modes */
+  src: local('NanumGothic'), local('NanumGothic-Regular'),
+       url('/assets/fonts/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/NanumGothic-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/NanumGothic-Regular.woff') format('woff'); /* Modern Browsers */
+  unicode-range: U+005C;
+}
+
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/NNanumGothic-Bold.eot'); /* IE9 Compat Modes */
+  src: local('NanumGothic'), local('NanumGothic-Bold'),
+       url('/assets/fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/NanumGothic-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/NanumGothic-Bold.woff') format('woff'); /* Modern Browsers */
+  unicode-range: U+005C;
+}
+
+/*  í•œêµ­ì–´ */
+:lang(ko) {
+  font-family: 'NanumGothic', 'Noto Sans KR', serif;
+}
+ /* ì¤‘êµ­ì–´ (ê°„ì²´) */
+:lang(zh-Hans) {
+  font-family: 'NanumGothic', 'Noto Sans SC', sans-serif;
+}
+
+/* RESET css */
+html, body, div, p, span, strong, b, em, iframe, pre,
+h1, h2, h3, h4, h5, h6,
+img, dl, dt, dd,
+fieldset, form, legend, label,
+table, caption, thead, tbody, tfoot, tr, th, td,
+ul, ol, li, a, input, select, textarea{margin: 0;padding: 0; border: 0 none; }
+
+body{background:#fff;font-family:'NanumGothic', 'Noto Sans KR', sans-serif;font-size:10px;line-height:1.4;color: #333;}
+button,
+textarea,
+input,
+select{font-family: 'NanumGothic', 'Noto Sans KR', sans-serif;font-size:15px;}
+ul, ol, li{list-style:none;}
+em, address{font-style:normal;}
+strong{font-weight:600;}
+img{border:0 none;font-size:0;line-height:0;max-width:100%;}
+sup{position:relative;top:2px;font-size:11px;line-height:100%;}
+table{border-collapse: collapse; border-spacing:0;}
+caption{overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+th, td{ vertical-align: middle;/* white-space: nowrap */}
+a{color:#000;text-decoration:none;line-height:1;}
+a:hover, a:focus, a:active{text-decoration:none;}
+*, html{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+*, *:before, *:after{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block;}
+button{padding:0;margin:0;background:transparent;border:none;cursor:pointer;}
+figure{margin:0;padding:0;}
+select {appearance: none;-webkit-appearance: none;-moz-appearance: none;outline: 0;margin: 0;vertical-align: middle;cursor: pointer;border: 1px solid #ccc;padding: 8px 22px 8px 8px;}
+select::-ms-expand {
+   display: none;
+}
+
+.a11y-hidden{overflow:hidden;position:absolute;clip:rect(0 0 0 0); /* IE 6,7 */clip:rect(0,0,0,0);width:1px;height:1px;margin:-1px;border:0;padding:0;}
+caption.a11y-hidden{position:static;}
+.a11y-hidden.focusable:focus{overflow:visible;position:static;clip:auto;width:auto;height:auto;margin:0;}
+
+/* global_style */
+.skip_menu{position:absolute;top:0;left:0;z-index:10000;}
+.skip_menu a{display:block;padding:10px;background:#000;color:#fff;text-align:center;}
+.scroll{display:block;overflow-y:scroll;-webkit-overflow-scrolling: touch}
+.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.btn_default{background:#fff;border:1px solid #ccc;font-size:1.3rem;font-weight:bold;color:#383838;border-radius:3px;}
+
+/* typography style */
+.a_center{text-align:center;}
+.a_left{text-align:left;}
+.a_right{text-align:right;}
+.tit_sm{font-size:13px;color:#999;}
+.tit_list{font-size:14px;color:#666;}
+.txt_bg{display:block;background:rgba(0,0,0,.5);font-size:14px;font-weight:bold;color:#fff;}
+.through{text-decoration:line-through;}
+
+.clearfix:before, .clearfix:after{
+    content:'.';
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+    width:0;
+}
+/* http://sonspring.com/journal/clearing-floats */
+.clearfix {
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+    width:0;
+}
+
+/* For IE7. Move this to separate file when you notice some problems */
+.clearfix {zoom: 1;}
+img, object, embed {max-width:100% !important;}
+img {height:auto !important;}
+hr{margin:0;padding:0;border:none;border-top:1px dashed #ccc;}
+
+
