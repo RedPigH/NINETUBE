@@ -122,22 +122,50 @@
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="custom-contents">
                         <div class="custom-contents-contents">
-                            <input type="hidden" id="video" value=""/> <!-- 파일명 확인용 -->
+                            <form role="form" action="/save" method="post">
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">영상제목</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="text" class="form-control" id="VFILENAME" name="VFILENAME">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">작성자</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="text" value='tester01' class="form-control" id="CREATOR" name="CREATOR">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">카테고리</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <select class="form-control selectric" id="CATEGORYOID" name="CATEGORYOID">
+                                            <option>엔터테이먼트</option>
+                                            <option>게임</option>
+                                            <option>운동</option>
+                                            <option>레저</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                            <video id="videoPlay" width="100%" controls autoplay>
-                                <source type="video/mp4" src="${pageContext.request.contextPath}/resources/maincontents/img/thumbnail/preview-580778-F1MdKsYfSK-low.mp4" type="video/mp4" />
-                                <source src="mov_bbb.ogg" type="video/ogg">
-                                Your browser does not support HTML5 video.
-                            </video>
-
-                            <div class="caption">
-                                <h8>${content.VFILENAME}</h8>
-                                <p>${content.CREATOR}</p>
-                            </div>
-
-                            <div class="custom-contents-comments">
-                                잇힘
-                            </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">설명</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <textarea class="form-control" id="NVIDEO_DESCRIPTION" name="NVIDEO_DESCRIPTION" style="resize: none; height: 200px"></textarea>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">영상 업로드</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="file" name="videofile" id="videofile">
+                                    </div>
+                                </div>-->
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input class="btn btn-primary" value="등록" type="submit">
+                                    </div>
+                                </div>
+                            </form>
 
                         </div>
                         <!--댓글이 들어가버리는자리-->
@@ -225,7 +253,7 @@
 
         </div>
         <!-- End of Content Wrapper -->
-
+        </div>
     </div>
     <!-- End of Page Wrapper -->
 
