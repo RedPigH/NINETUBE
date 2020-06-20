@@ -60,7 +60,8 @@ public class homeController {
         mv.addObject("autoList", list);
         return mv;
     }
-
+    
+    // 자동완성검색
     @RequestMapping("/autoSearch")
     public String autoComplateMainSearch(HttpServletRequest request, HttpServletResponse response, @RequestParam(required = false) String vFileName) throws IOException {
 

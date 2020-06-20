@@ -16,13 +16,3 @@ public interface UserService {
     public boolean vaildateUserData(User user);
 
     }
-
-    public Page<User> findAll(@PageableDefault(sort = { "OID" }, direction = Sort.Direction.DESC, size = 5) Pageable pageable){
-        Page<User> list = userRepository.findAll(pageable);
-        return list;
-    }
-
-    public User findByACCOUNT(String ACCOUNT) {
-        return userRepository.findByACCOUNT(ACCOUNT);
-    }
-}
