@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -304,6 +305,22 @@
                 <div class="row-contents">
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="custom-thumbnail-container">
+                        <c:forEach var="board" items="${boardlist}">
+                            <div class="custom-thumbnail-box">
+                                <a href="/contents/${board.OID}">
+                                    <img class="custom-thumbnail-img" src="${pageContext.request.contextPath}/resources/maincontents/img/thumbnail/hq720 (1).jpg" alt="...">
+                                </a>
+                                <div class="caption">
+                                    <h8>${board.VFILENAME}</h8>
+                                    <p>${board.CREATOR}</p>
+
+                                </div>
+                            </div>
+                        </c:forEach>
+
+
+
+
                         <div class="custom-thumbnail-box">
                                 <img class="custom-thumbnail-img" src="${pageContext.request.contextPath}/resources/maincontents/img/thumbnail/hq720.jpg" alt="...">
                                 <div class="caption">

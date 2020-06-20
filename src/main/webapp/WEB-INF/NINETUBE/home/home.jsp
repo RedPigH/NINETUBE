@@ -200,7 +200,7 @@
     <div id="user_info" class="none">
         <div class="user">
             <img src="resources/home/img/users.png" alt="user">
-            <p>${user.NAME}</p>
+            <p>Hong Gil Dong</p>
             <ul>
                 <li>구독</li>
                 <li>업로드</li>

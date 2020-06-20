@@ -120,14 +120,27 @@
                 <!-- Content Row -->
                 <div class="row-contents-detail">
                     <!-- Earnings (Monthly) Card Example -->
-                    <div class="custom-thumbnail-container">
-                        <div class="custom-thumbnail-box">
-                            <img class="custom-video" src="${pageContext.request.contextPath}/resources/maincontents/img/thumbnail/hq720.jpg" alt="...">
+                    <div class="custom-contents">
+                        <div class="custom-contents-contents">
+                            <input type="hidden" id="video" value=""/> <!-- 파일명 확인용 -->
+
+                            <video id="videoPlay" width="100%" controls autoplay>
+                                <source type="video/mp4" src="${pageContext.request.contextPath}/resources/maincontents/img/thumbnail/preview-580778-F1MdKsYfSK-low.mp4" type="video/mp4" />
+                                <source src="mov_bbb.ogg" type="video/ogg">
+                                Your browser does not support HTML5 video.
+                            </video>
+
                             <div class="caption">
-                                <h8>[시나공 정보처리기사 실기 기본서] 토막강의</h8>
-                                <p>길벗 시나공it</p>
+                                <h8>${content.VFILENAME}</h8>
+                                <p>${content.CREATOR}</p>
                             </div>
+
+                            <div class="custom-contents-comments">
+                                잇힘
+                            </div>
+
                         </div>
+                        <!--댓글이 들어가버리는자리-->
 
 
 
